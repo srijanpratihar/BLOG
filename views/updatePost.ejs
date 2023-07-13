@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/style.css" />
 
 
-    <title>Add Post</title>
+    <title>Update Post</title>
 </head>
 
 <body>
@@ -25,9 +25,11 @@
                 <!-- add icon -->
                 <i class="fas fa-plus"></i>
             </h1>
-            <small class="error">
+            <% if(error) {%>
+
+                <small class="error">
         <i class="fas fa-exclamation-circle"></i>
-        Invalid Credentials
+        <%=error%>
       </small>
             <form action="/api/v1/posts/<%=post._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <!-- Post Title -->
